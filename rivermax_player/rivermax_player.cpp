@@ -16,12 +16,12 @@
  */
 
 #include <iomanip>
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
-#include <string.h>
+#include <cstring>
 #include <thread>
 #include <memory>
 #include <condition_variable>
@@ -35,6 +35,8 @@
 #include "rt_threads.h"
 #include "readerwriterqueue/readerwriterqueue.h"
 #include "CLI/CLI.hpp"
+#include "Lib.Logger/LogWriter.h"
+
 // ffmpeg
 extern "C" {
 #include <libavcodec/avcodec.h>
@@ -2619,6 +2621,8 @@ static bool set_clock(rmax_clock_types clock_handler_type, std::vector<std::stri
 
 int main(int argc, char *argv[])
 {
+    LoggerInitializer logger_initializer;
+
     unsigned int api_major;
     unsigned int api_minor;
     unsigned int release;
