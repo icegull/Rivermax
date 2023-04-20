@@ -76,6 +76,7 @@ using namespace moodycamel;
 #endif
 
 #define RMAX_PLAYER_AFFINITY "RMAX_PLAYER_AFFINITY"
+#define LOGNAME LR"(C:\Logs\rivermax_player\player.log)"
 
 uint64_t rivermax_player_time_handler(void*)
 {
@@ -2622,6 +2623,8 @@ static bool set_clock(rmax_clock_types clock_handler_type, std::vector<std::stri
 int main(int argc, char *argv[])
 {
     LoggerInitializer logger_initializer;
+    info_log(LOGNAME, "");
+    info_log(LOGNAME, "**********************");
 
     unsigned int api_major;
     unsigned int api_minor;
