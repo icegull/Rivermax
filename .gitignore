@@ -4,3 +4,4 @@ build
 
 /rivermax_player/Lib.Logger/x64/
 /.vs
+.vscode
